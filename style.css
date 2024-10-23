@@ -191,7 +191,6 @@ aside .profile .top .profile-photo{
     overflow: hidden;
     border: 5px solid var(--color-light);
     transition: all 400ms ease;
-    border: 2px solid rgba(0,0,0,0.8);
 }
 aside .profile .about p{
     padding-bottom: 1rem;
