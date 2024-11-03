@@ -10,7 +10,19 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #9a99c8a5;
+        }
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         header {
             background-color: transparent;
@@ -41,12 +53,12 @@
         .categories a {
             flex-grow: 1; /* Menyebabkan semua tombol memiliki ukuran yang sama */
             margin: 0 5px; /* Mengurangi margin untuk menghindari pergeseran */
-            background-color: rgba(140, 125, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.705);
             color: rgb(0, 0, 0);
             padding: 5px 10px;
             border-radius: 5px;
             text-decoration: none;
-            border: 3px solid rgba(52, 52, 52, 0.5);
+            border: 3px solid rgb(255, 255, 255);
             text-align: center; /* Memastikan teks di tengah */
         }
         
@@ -62,7 +74,7 @@
             border: 3px solid rgba(69, 45, 255, 0.767);
             margin: 20px;
             border-radius: 10px;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.479);
         }
         .product {
             flex: 0 0 200px; /* Mengatur lebar tetap untuk setiap produk */
@@ -102,10 +114,19 @@
             background-color: #4800ffcd;
         }
         footer {
-            text-align: center;
-            padding: 10px;
-            background-color: rgb(0, 0, 0);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
             color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            z-index: 1;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
         }
         hr {
             border-color: 5px solid #000000;
@@ -169,18 +190,27 @@
             gap: 8px;
             border: 3px solid black;
         }
+        .clr {
+            color: #fff;
+        }
     </style>
 </head>
+<div class="video-container">
+    <video autoplay muted loop>
+        <source src="https://pomf2.lain.la/f/9xuwdmv.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+    </video>
+</div>
 <body>
 
 <header>
-    <h1>Website Jualan</h1>
+    <h1>Toko Digital Rezz Store</h1>
 </header>
 
 <div class="search-bar">
     <input type="text" id="searchlmput" placeholder="Cari Produk..." onkeyup="searchProducts()">
 </div>
-
+<br><hr>
 <div class="categories">
     <a href="#do">Cloud DO</a>
     <a href="#vps">VPS</a>
@@ -189,27 +219,166 @@
     <a href="#suntik">Suntik Sosmed</a>
     <a href="#topup">Top Up Game</a>
 </div>
-
+<hr><br><br><br>
+<!--[ CLOUD DIGITAL OCEAN ]-->
 <hr>
-
-<!-- VPS Section -->
-<center><h2 id="vps">VPS UBUNTU</h2></center>
+<center><h2 class="clr" id="do">CLOUD DIGITAL OCEAN</h2></center>
+<div class="products">
+    <!-- Product 8 -->
+    <div class="product" data-title="CLOUD 3 DROP STANDAR" draggable="true" ondragstart="drag(event)" id="product8">
+        <img src="https://pomf2.lain.la/f/6amo2lm.png" alt="">
+        <h2>DIGITAL OCEAN 3 DROP</h2>
+        <p>(IDR) Rp 150.000</p>
+        <button onclick="openPopup('produk8')">Lihat Detile</button>
+    </div>
+        <div class="popup-background" id="produk8">
+            <div class="popup-content">
+                <button class="close-popup-btn" onclick="closePopup('produk8')">
+                    <i class="fas fa-times"></i>
+                </button>
+            <center><img src="https://pomf2.lain.la/f/6amo2lm.png" alt=""></center>
+                <h2>DIGITAL OCEAN 3 DROP</h2>
+                <hr>
+                <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>DROP : 3 DROP KOSONG</li>
+                <li>CUPON : 200$</li>
+                <li>AKTIF : 60 DAY</li>
+                <li>TYPE : STANDAR QUALITY</li>
+            </ul>
+                <hr>
+                <h3>(IDR) Rp 150.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('DO 3 DROP STANDAR QUALITY')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('DO 3 DROP STANDAR QUALITY')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i> 
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Product 9 -->
+    <div class="product" data-title="CLOUD 3 DROP HIGH" draggable="true" ondragstart="drag(event)" id="product9">
+        <img src="https://pomf2.lain.la/f/6amo2lm.png" alt="">
+        <h2>DIGITAL OCEAN 3 DROP</h2>
+        <p>(IDR) Rp 170.000</p>
+        <button onclick="openPopup('produk9')">Lihat Detile</button>
+    </div>
+        <div class="popup-background" id="produk9">
+            <div class="popup-content">
+                <button class="close-popup-btn" onclick="closePopup('produk9')">
+                    <i class="fas fa-times"></i>
+                </button>
+            <center><img src="https://pomf2.lain.la/f/6amo2lm.png" alt=""></center>
+                <h2>DIGITAL OCEAN 3 DROP</h2>
+                <hr>
+                <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>DROP : 3 DROP KOSONG</li>
+                <li>CUPON : 200$</li>
+                <li>AKTIF : 60 DAY</li>
+                <li>TYPE : HIGH QUALITY</li>
+            </ul>
+                <hr>
+                <h3>(IDR) Rp 170.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('DO 3 DROP HIGH QUALITY')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('DO 3 DROP HIGH QUALITY')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i> 
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Product 10 -->
+    <div class="product" data-title="CLOUD 10 DROP STANDAR" draggable="true" ondragstart="drag(event)" id="product10">
+        <img src="https://pomf2.lain.la/f/6amo2lm.png" alt="">
+        <h2>DIGITAL OCEAN 10 DROP</h2>
+        <p>(IDR) Rp 180.000</p>
+        <button onclick="openPopup('produk10')">Lihat Detile</button>
+    </div>
+        <div class="popup-background" id="produk10">
+            <div class="popup-content">
+                <button class="close-popup-btn" onclick="closePopup('produk10')">
+                    <i class="fas fa-times"></i>
+                </button>
+            <center><img src="https://pomf2.lain.la/f/6amo2lm.png" alt=""></center>
+                <h2>DIGITAL OCEAN 10 DROP</h2>
+                <hr>
+                <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>DROP : 10 DROP KOSONG</li>
+                <li>CUPON : 200$</li>
+                <li>AKTIF : 60 DAY</li>
+                <li>TYPE : STANDAR QUALITY</li>
+            </ul>
+                <hr>
+                <h3>(IDR) Rp 180.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('DO 10 DROP STANDAR QUALITY')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('DO 10 DROP STANDAR QUALITY')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i> 
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Product 10 -->
+    <div class="product" data-title="CLOUD 10 DROP HIGH" draggable="true" ondragstart="drag(event)" id="product11">
+        <img src="https://pomf2.lain.la/f/6amo2lm.png" alt="">
+        <h2>DIGITAL OCEAN 10 DROP</h2>
+        <p>(IDR) Rp 210.000</p>
+        <button onclick="openPopup('produk11')">Lihat Detile</button>
+    </div>
+        <div class="popup-background" id="produk11">
+            <div class="popup-content">
+                <button class="close-popup-btn" onclick="closePopup('produk11')">
+                    <i class="fas fa-times"></i>
+                </button>
+            <center><img src="https://pomf2.lain.la/f/6amo2lm.png" alt=""></center>
+                <h2>DIGITAL OCEAN 10 DROP</h2>
+                <hr>
+                <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>DROP : 10 DROP KOSONG</li>
+                <li>CUPON : 200$</li>
+                <li>AKTIF : 60 DAY</li>
+                <li>TYPE : HIGH QUALITY</li>
+            </ul>
+                <hr>
+                <h3>(IDR) Rp 210.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('DO 10 DROP HIGH QUALITY')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('DO 10 DROP HIGH QUALITY')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i> 
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr><br><br>
+<!--[ VPS UBUNTU ]-->
+ <hr>
+<center><h2 class="clr" id="vps">VPS UBUNTU</h2></center>
 <div class="products">
         <!-- Product 1 -->
         <div class="product" data-title="VPS 1 GB" draggable="true" ondragstart="drag(event)" id="product1">
-            <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB">
+            <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="">
             <h2>VPS 1GB CORE 1</h2>
             <p>(IDR) Rp 10.000</p>
-            <button onclick="openPopup('produk2')">Lihat Detile</button>
+            <button onclick="openPopup('produk1')">Lihat Detile</button>
         </div>
-
-    <!-- Remaining products... -->
-    <div class="popup-background" id="produk2">
+    <div class="popup-background" id="produk1">
         <div class="popup-content">
-            <button class="close-popup-btn" onclick="closePopup('produk2')">
+            <button class="close-popup-btn" onclick="closePopup('produk1')">
                 <i class="fas fa-times"></i>
             </button>
-            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB"></center>
+            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt=""></center>
             <h2>VPS 1GB CORE 1</h2>
             <hr>
             <h3>SPESIFIKASI</h3>
@@ -235,50 +404,240 @@
             </div>
         </div>
     </div>
-    <!-- Product 1 -->
-    <div class="product" data-title="VPS 1 GB" draggable="true" ondragstart="drag(event)" id="product1">
-        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB">
-        <h2>VPS 1GB CORE 1</h2>
-        <p>(IDR) Rp 10.000</p>
+    <!-- Product 2 -->
+    <div class="product" data-title="VPS 2 GB" draggable="true" ondragstart="drag(event)" id="product2">
+        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="">
+        <h2>VPS 2GB CORE 1</h2>
+        <p>(IDR) Rp 15.000</p>
         <button onclick="openPopup('produk2')">Lihat Detile</button>
     </div>
-    <!-- Product 1 -->
-    <div class="product" data-title="VPS 1 GB" draggable="true" ondragstart="drag(event)" id="product1">
-        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB">
-        <h2>VPS 1GB CORE 1</h2>
-        <p>(IDR) Rp 10.000</p>
-        <button onclick="openPopup('produk2')">Lihat Detile</button>
+    <div class="popup-background" id="produk2">
+        <div class="popup-content">
+            <button class="close-popup-btn" onclick="closePopup('produk2')">
+                <i class="fas fa-times"></i>
+            </button>
+            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt=""></center>
+            <h2>VPS 2GB CORE 1</h2>
+            <hr>
+            <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>RAM: 2000 / 2GB</li>
+                <li>CPU: 1 CORE</li>
+            </ul>
+            <h3>KEUNTUNGAN</h3>
+            <ul>
+                <li>FREE INSTALL PANEL</li>
+                <li>FREE REQUEST DOAIN</li>
+                <li>GARANSI 15 HARI 1X AMBIL</li>
+            </ul>
+            <hr>
+            <h3>(IDR) Rp 15.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('VPS RAM 2GB CORE 1')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('VPS RAM 2GB CORE 1')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
     </div>
-    <!-- Product 1 -->
-    <div class="product" data-title="VPS 1 GB" draggable="true" ondragstart="drag(event)" id="product1">
-        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB">
-        <h2>VPS 1GB CORE 1</h2>
-        <p>(IDR) Rp 10.000</p>
-        <button onclick="openPopup('produk2')">Lihat Detile</button>
+    <!-- Product 3 -->
+    <div class="product" data-title="VPS 2 GB" draggable="true" ondragstart="drag(event)" id="product3">
+        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="">
+        <h2>VPS 2GB CORE 2</h2>
+        <p>(IDR) Rp 20.000</p>
+        <button onclick="openPopup('produk3')">Lihat Detile</button>
     </div>
-    <!-- Product 1 -->
-    <div class="product" data-title="VPS 1 GB" draggable="true" ondragstart="drag(event)" id="product1">
-        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB">
-        <h2>VPS 1GB CORE 1</h2>
-        <p>(IDR) Rp 10.000</p>
-        <button onclick="openPopup('produk2')">Lihat Detile</button>
+    <div class="popup-background" id="produk3">
+        <div class="popup-content">
+            <button class="close-popup-btn" onclick="closePopup('produk3')">
+                <i class="fas fa-times"></i>
+            </button>
+            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt=""></center>
+            <h2>VPS 2GB CORE 2</h2>
+            <hr>
+            <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>RAM: 2000 / 2GB</li>
+                <li>CPU: 2 CORE</li>
+            </ul>
+            <h3>KEUNTUNGAN</h3>
+            <ul>
+                <li>FREE INSTALL PANEL</li>
+                <li>FREE REQUEST DOAIN</li>
+                <li>GARANSI 15 HARI 1X AMBIL</li>
+            </ul>
+            <hr>
+            <h3>(IDR) Rp 20.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('VPS RAM 2GB CORE 2')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('VPS RAM 2GB CORE 2')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
     </div>
-    <!-- Product 1 -->
-    <div class="product" data-title="VPS 1 GB" draggable="true" ondragstart="drag(event)" id="product1">
-        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB">
-        <h2>VPS 1GB CORE 1</h2>
-        <p>(IDR) Rp 10.000</p>
-        <button onclick="openPopup('produk2')">Lihat Detile</button>
+    <!-- Product 4 -->
+    <div class="product" data-title="VPS 4 GB" draggable="true" ondragstart="drag(event)" id="product4">
+        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="">
+        <h2>VPS 4GB CORE 2</h2>
+        <p>(IDR) Rp 30.000</p>
+        <button onclick="openPopup('produk4')">Lihat Detile</button>
     </div>
-    <!-- Product 1 -->
-    <div class="product" data-title="VPS 1 GB" draggable="true" ondragstart="drag(event)" id="product1">
-        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB">
-        <h2>VPS 1GB CORE 1</h2>
-        <p>(IDR) Rp 10.000</p>
-        <button onclick="openPopup('produk2')">Lihat Detile</button>
+    <div class="popup-background" id="produk4">
+        <div class="popup-content">
+            <button class="close-popup-btn" onclick="closePopup('produk4')">
+                <i class="fas fa-times"></i>
+            </button>
+            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt=""></center>
+            <h2>VPS 4GB CORE 2</h2>
+            <hr>
+            <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>RAM: 4000 / 4GB</li>
+                <li>CPU: 2 CORE</li>
+            </ul>
+            <h3>KEUNTUNGAN</h3>
+            <ul>
+                <li>FREE INSTALL PANEL</li>
+                <li>FREE REQUEST DOAIN</li>
+                <li>GARANSI 15 HARI 1X AMBIL</li>
+            </ul>
+            <hr>
+            <h3>(IDR) Rp 30.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('VPS RAM 4GB CORE 2')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('VPS RAM 4GB CORE 2')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Product 5 -->
+    <div class="product" data-title="VPS 8 GB" draggable="true" ondragstart="drag(event)" id="product5">
+        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="">
+        <h2>VPS 8GB CORE 2</h2>
+        <p>(IDR) Rp 40.000</p>
+        <button onclick="openPopup('produk5')">Lihat Detile</button>
+    </div>
+    <div class="popup-background" id="produk5">
+        <div class="popup-content">
+            <button class="close-popup-btn" onclick="closePopup('produk5')">
+                <i class="fas fa-times"></i>
+            </button>
+            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt=""></center>
+            <h2>VPS 8GB CORE 2</h2>
+            <hr>
+            <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>RAM: 8000 / 8GB</li>
+                <li>CPU: 2 CORE</li>
+            </ul>
+            <h3>KEUNTUNGAN</h3>
+            <ul>
+                <li>FREE INSTALL PANEL</li>
+                <li>FREE INSTALL THEMA</li>
+                <li>FREE REQUEST DOAIN</li>
+                <li>GARANSI 15 HARI 1X AMBIL</li>
+            </ul>
+            <hr>
+            <h3>(IDR) Rp 40.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('VPS RAM 8GB CORE 2')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('VPS RAM 8GB CORE 2')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Product 6 -->
+    <div class="product" data-title="VPS 8 GB" draggable="true" ondragstart="drag(event)" id="product6">
+        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="">
+        <h2>VPS 8GB CORE 4</h2>
+        <p>(IDR) Rp 45.000</p>
+        <button onclick="openPopup('produk6')">Lihat Detile</button>
+    </div>
+    <div class="popup-background" id="produk6">
+        <div class="popup-content">
+            <button class="close-popup-btn" onclick="closePopup('produk6')">
+                <i class="fas fa-times"></i>
+            </button>
+            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt=""></center>
+            <h2>VPS 8GB CORE 4</h2>
+            <hr>
+            <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>RAM: 8000 / 8GB</li>
+                <li>CPU: 4 CORE</li>
+            </ul>
+            <h3>KEUNTUNGAN</h3>
+            <ul>
+                <li>FREE INSTALL PANEL</li>
+                <li>FREE INSTALL THEMA</li>
+                <li>FREE REQUEST DOAIN</li>
+                <li>GARANSI 15 HARI 1X AMBIL</li>
+            </ul>
+            <hr>
+            <h3>(IDR) Rp 45.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('VPS RAM 8GB CORE 4')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('VPS RAM 8GB CORE 4')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Product 5 -->
+    <div class="product" data-title="VPS 16 GB" draggable="true" ondragstart="drag(event)" id="product7">
+        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="">
+        <h2>VPS 16GB CORE 4</h2>
+        <p>(IDR) Rp 70.000</p>
+        <button onclick="openPopup('produk7')">Lihat Detile</button>
+    </div>
+    <div class="popup-background" id="produk7">
+        <div class="popup-content">
+            <button class="close-popup-btn" onclick="closePopup('produk7')">
+                <i class="fas fa-times"></i>
+            </button>
+            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt=""></center>
+            <h2>VPS 16GB CORE 4</h2>
+            <hr>
+            <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>RAM: 16000 / 16GB</li>
+                <li>CPU: 4 CORE</li>
+            </ul>
+            <h3>KEUNTUNGAN</h3>
+            <ul>
+                <li>FREE INSTALL PANEL</li>
+                <li>FREE INSTALL THEMA</li>
+                <li>FREE REQUEST DOAIN</li>
+                <li>GARANSI 15 HARI 1X AMBIL</li>
+            </ul>
+            <hr>
+            <h3>(IDR) Rp 70.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('VPS RAM 16GB CORE 4')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('VPS RAM 16GB CORE 4')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
-
+<hr>
+<br><br><br>
 <footer>
     <p>&copy; 2023 Website Jualan. All rights reserved.</p>
 </footer>
