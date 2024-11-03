@@ -1,110 +1,348 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Website Rerez Official</title>
-    <link rel="shortcut icon" href="./images/logo.png">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-  />
-    <link rel="stylesheet" href="style.css">
+    <title>Website Jualan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9a99c8a5;
+        }
+        header {
+            background-color: transparent;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 25px 30px;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .categories a {
+            margin: 0 10px;
+            background-color: rgba(140, 125, 255, 0.5);
+            color: rgb(0, 0, 0);
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            border: 2px solid rgba(52, 52, 52, 0.5);
+        }
+        .categories a:hover {
+            background-color: #595cff;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            padding: 20px;
+            justify-content: center;
+            border: 3px solid rgba(69, 45, 255, 0.767);
+            margin: 20px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin: 5px 10px;
+            border: 2px solid rgba(143, 128, 255, 0.675);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product h2 {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        .product p {
+            font-size: 14px;
+            color: gray;
+        }
+        .product button {
+            background-color: rgba(65, 42, 236, 0.6);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            border: 2px solid rgba(52, 52, 52, 0.5);
+        }
+        .product button:hover {
+            background-color: #4800ffcd;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+        }
+        hr {
+            border-color: 5px solid #000000;
+        }
+        .popup-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%; /* Change this value to make the pop-up smaller */
+            max-width: 400px; /* Set a maximum width for better control */
+            height: auto; /* Allow height to adjust based on content */
+            position: relative;
+            border: 2px solid rgba(65, 42, 236, 0.6);
+        }
+        
+        .popup-content h2 {
+            text-align: center;
+        }
+        .close-popup-btn {
+            position: absolute;
+            font-size: 25px;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #000000;
+        }
+        .popup-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .popup-button-left {
+            background-color: blue; /* Muted blue */
+            margin-right: 10px; /* Space between buttons */
+        }
+        
+        .popup-button-right {
+            background-color: greenyellow; /* Muted green */
+        }
+        
+        /* Ensure buttons have consistent padding and border radius */
+        .popup-button {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 3px solid black;
+        }
+        
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo" title="University Management System">
-            <img src="./images/logo.png" alt="">
-            <h2>R<span class="danger">E</span>Z</h2>
-        </div>
-        <div class="navbar">
-            <a href="index.html" class="active">
-                <span class="material-icons-sharp">home</span>
-                <h3>Home</h3>
-            </a>
-            <a href="timetable.html" onclick="timeTableAll()">
-                <span class="material-icons-sharp">person</span>
-                <h3>Contac</h3>
-            </a> 
-            <a href="exam.html">
-                <span class="material-icons-sharp">bar_chart</span>
-                <h3>Dashbord</h3>
-            </a>
-            <a href="password.html">
-                <span class="material-icons-sharp">password</span>
-                <h3>Change Password</h3>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp" onclick="">logout</span>
-                <h3>Logout</h3>
-            </a>
-        </div>
-        <div id="profile-btn">
-            <span class="material-icons-sharp">person</span>
-        </div>
-        <div class="theme-toggler">
-            <span class="material-icons-sharp active">light_mode</span>
-            <span class="material-icons-sharp">dark_mode</span>
-        </div>
-        
-    </header>
-    <div class="container">
-        <aside>
-            <div class="profile">
-                <div class="top">
-                    <div class="profile-photo">
-                        <img src="./images/profile-1.jpg" alt="">
-                    </div>
-                    <div class="info">
-                        <p><b>Rerezz Official</b> </p>
-                        <small class="text-muted">Developer</small>
-                    </div>
-                 </div>
-                <div class="about">
-                    <h5>Description</h5>
-                    <p>I'M Developer Bot WhatsApp And Wbsite Design</p>
-                    <h5>Contac Me At</h5>
-                    <a href="https://t.me/rerez_x_hosting"><p>Telegram</p></a>
-                    <h5>YouTube Channel</h5>
-                    <a href="https://www.youtube.com/@RerezzOffc"><p>YouTube</p></a>
-                    <h5>Email</h5>
-                    <p>rerezhosting@gmail.com</p></a>
-                    <h5>Address</h5>
-                    <a href="https://www.google.com/maps/place/West+Java/@-6.8606123,104.9629437,7z">
-                        <p>Indonesia, West Java</p></a>
-                </div>
-                   
+
+<header>
+    <h1>Website Jualan</h1>
+</header>
+
+<div class="search-bar">
+    <input type="text" id="searchlmput" placeholder="Cari Produk..." onkeyup="searchProducts()">
+</div>
+
+<div class="categories">
+    <a href="#vps">VPS</a>
+    <a href="#panel">PANEL</a>
+    <a href="#jabot">JADI BOT</a>
+</div>
+
+<hr>
+
+<!-- VPS Section -->
+<center><h2 id="vps">VPS UBUNTU</h2></center>
+<div class="products">
+    <!-- Product 1 -->
+    <div class="product" data-title="VPS 1 GB">
+        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB">
+        <h2>VPS 1GB CORE 1</h2>
+        <p>(IDR) Rp 10.000</p>
+        <button onclick="openPopup('produk1')">Lihat Detile</button>
+    </div>
+    <div class="popup-background" id="produk1">
+        <div class="popup-content">
+            <button class="close-popup-btn" onclick="closePopup('produk1')">
+                <i class="fas fa-times"></i>
+            </button>
+            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB"></center>
+            <h2>VPS 1GB CORE 1</h2>
+            <hr>
+            <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>RAM: 1000 / 1GB</li>
+                <li>CPU: 1 CORE</li>
+            </ul>
+            <h3>KEUNTUNGAN</h3>
+            <ul>
+                <li>FREE INSTALL PANEL</li>
+                <li>FREE REQUEST DOAIN</li>
+                <li>GARANSI 15 HARI 1X AMBIL</li>
+            </ul>
+            <hr>
+            <h3>(IDR) Rp 10.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('VPS RAM 1GB CORE 1')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('VPS RAM 1GB CORE 1')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i>
+                </button>
             </div>
-        </aside>
-    <main>
-        
-<h2>MY WEBSITE REREZ OFFICIAL</h2><br><br>
-    <a
-        href="Rezz/store.html"
-        class="btn"
-        data-aos="zoom-in"
-        data-aos-duration="500"
-      >
-        <div class="icon" link="Rezz/store.html">
-          <i class="fa-solid fa-shop"></i>
         </div>
-        <p>XYREZZ STORE</p>
-        <div class="tile-share-button">
-          <i class="fa-solid fa-share"></i>
+    </div>
+
+    <!-- Product 1 -->
+    <div class="product" data-title="VPS 1 GB">
+        <img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB">
+        <h2>VPS 1GB CORE 1</h2>
+        <p>(IDR) Rp 10.000</p>
+        <button onclick="openPopup('produk1')">Lihat Detile</button>
+    </div>
+    <div class="popup-background" id="produk1">
+        <div class="popup-content">
+            <button class="close-popup-btn" onclick="closePopup('produk1')">
+                <i class="fas fa-times"></i>
+            </button>
+            <center><img src="https://pomf2.lain.la/f/qjad1hx.jpeg" alt="VPS 1 GB"></center>
+            <h2>VPS 1GB CORE 1</h2>
+            <hr>
+            <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>RAM: 1000 / 1GB</li>
+                <li>CPU: 1 CORE</li>
+            </ul>
+            <h3>KEUNTUNGAN</h3>
+            <ul>
+                <li>FREE INSTALL PANEL</li>
+                <li>FREE REQUEST DOAIN</li>
+                <li>GARANSI 15 HARI 1X AMBIL</li>
+            </ul>
+            <hr>
+            <h3>(IDR) Rp 10.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('VPS RAM 1GB CORE 1')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('VPS RAM 1GB CORE 1')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
         </div>
-      </a>
-    <!--[ js kontolll ]-->
-    <script src="timeTable.js"></script>
-    <script src="app.js"></script>
-    </main>
+    </div>
+</div>
+
+<hr>
+
+<!-- PANEL Section -->
+<center><h2 id="panel">PANEL PETRODACTYL</h2></center>
+<div class="products">
+    <div class="product" data-title="PANEL 1GB">
+        <img src="https://pomf2.lain.la/f/sni8rsa.png" alt="PANEL 1GB CPU 50%">
+        <h2>PANEL 1GB CPU 50%</h2>
+        <p>(IDR) Rp 1.000</p>
+        <button onclick="openPopup('produk7')">Lihat Detile</button>
+    </div>
+    <div class="popup-background" id="produk7">
+        <div class="popup-content">
+            <button class="close-popup-btn" onclick="closePopup('produk7')">
+                <i class="fas fa-times"></i>
+            </button>
+            <center><img src="https://pomf2.lain.la/f/sni8rsa.png" alt="PANEL 1GB"></center>
+            <h2>PANEL PETRODACTYL</h2>
+            <hr>
+            <h3>SPESIFIKASI</h3>
+            <ul>
+                <li>RAM: 1000 / 1GB</li>
+                <li>CPU: 50%</li>
+            </ul>
+            <h3>KEUNTUNGAN</h3>
+            <ul>
+                <li>FREE INSTALL PANEL</li>
+                <li>GARANSI 15 HARI 1X AMBIL</li>
+            </ul>
+            <hr>
+            <h3>(IDR) Rp 1.000</h3>
+            <div class="popup-footer">
+                <button class="popup-button" onclick="orderProductwa('PANEL 1GB CPU 50%')">
+                    <i class="fa-brands fa-whatsapp"></i> Pesan Di WhatsApp
+                </button>
+                <button class="popup-button" onclick="orderProducttl('PANEL 1GB CPU 50%')">
+                    Pesan Di Telegram <i class="far fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Website Jualan. All rights reserved.</p>
+</footer>
+
+<script>
+    function orderProductwa(productName) {
+        const waLink = "https://wa.me/1234567890?text=" + encodeURIComponent("Saya mau pesan " + productName);
+        window.open(waLink, '_blank');
+    }
+
+    function orderProducttl(productName) {
+        const telegramLink = "https://t.me/rerez_x_hosting?start=" + productName.replace(/\s+/g, "_");
+        window.open(telegramLink, '_blank');
+    }
+
+    function openPopup(popupId) {
+        document.getElementById(popupId).style.display = 'flex';
+    }
+
+    function closePopup(popupId) {
+        document.getElementById(popupId).style.display = 'none';
+    }
+
+    function searchProducts() {
+        const input = document.getElementById('searchlmput').value.toLowerCase();
+        const products = document.querySelectorAll('.product');
+        products.forEach(product => {
+            const title = product.getAttribute('data-title').toLowerCase();
+            product.style.display = title.includes(input) ? 'block' : 'none';
+        });
+    }
+</script>
+
 </body>
 </html>
